@@ -1,17 +1,20 @@
-#读取文档
-#读取文档时文档的实际编码为：
-# 商品, 价格\n
-# ````````\n
+import os #operating system 
+products = []
 
-with open('pro.csv', 'r') as f:
-    for line in f:
-        if '商品, 价格' in line:
-            continue
-        name, price = line.strip().split(',')
-        print(name, price)
+if os.path.isfile:
+    print('文档读取成功！')
+    with open('pro.csv', 'r') as f:
+        for line in f:
+            if '商品, 价格' in line:
+                continue
+            name, price = line.strip().split(',')
+            products.append([name, price])
+    print(products)
+else:
+    print('找不到该文档')
+
 
 #建立文档并写入数据
-products = []
 while True:
     name = input('请输入商品名称：')
     if name == 'q':
