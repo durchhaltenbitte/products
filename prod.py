@@ -1,3 +1,16 @@
+#读取文档
+#读取文档时文档的实际编码为：
+# 商品, 价格\n
+# ````````\n
+
+with open('pro.csv', 'r') as f:
+    for line in f:
+        if '商品, 价格' in line:
+            continue
+        name, price = line.strip().split(',')
+        print(name, price)
+
+#建立文档并写入数据
 products = []
 while True:
     name = input('请输入商品名称：')
